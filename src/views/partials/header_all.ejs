@@ -1,0 +1,72 @@
+<header class="headerAll" id="myHeader">
+  <div class="container">
+    <%- include('./topHeader.ejs')%>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark py-0">
+      <a class="navbar-brand py-0" href="/">
+          <span style="font-family: 'Dancing Script', cursive; font-size: 40px;">Piccolo</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto border-bottom">
+          <a
+            class="nav-link text-white px-4 position-relative"
+            href="/"
+            >HOME</a
+          >
+          <a class="nav-link text-white px-4 position-relative" href="/layout/products"
+            >MENU</a
+          >
+          <a class="nav-link text-white px-4 position-relative" href="https://tinyurl.com/yfr7tj74"
+            >RATE US!</a
+          >
+          <!-- <a class="nav-link text-white px-4 position-relative" href="/#newIn"
+            >NEWS</a
+          >
+          <a class="nav-link text-white px-4 position-relative" href="#"
+            >CONTACT</a
+          >
+          <a class="nav-link text-white px-4 position-relative" href="#"
+            >SIGN IN</a -->
+          >
+        </div>
+      </div>
+    </nav>
+  </div>
+  </header>
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    </script>
+
+    <style>
+      .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+    </style>
+
+

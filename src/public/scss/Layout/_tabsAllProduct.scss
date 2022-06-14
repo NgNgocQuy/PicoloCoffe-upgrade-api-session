@@ -1,0 +1,185 @@
+.nav-pills-custom .nav-link {
+    color: #3a6073;
+    background:#fff;
+    position: relative;
+    transition: all 0.5s;
+    &:hover{
+      padding-left: 25px;
+    }
+};
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    #3a6073,
+    #16222a
+  ); 
+}
+
+
+/* Add indicator arrow for the active tab */
+@media (min-width: 992px) {
+  .nav-pills-custom .nav-link::before {
+    content: '';
+    display: block;
+    border-top: 8px solid transparent;
+    border-left: 10px solid #fff;
+    border-bottom: 8px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+.allProduct{
+  
+  h4 {
+    font-size: 18px;
+    margin-bottom: 40px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: 				#3a6073;
+   
+    position: relative;
+    border-bottom: 1px solid #dfdfdf;
+
+    padding-bottom: 20px;
+
+     &::after {
+       content: "";
+       width: 120px;
+       display: block;
+      height: 4px;
+       box-shadow: 0 0 20px 0 #16222a;
+        background: linear-gradient(
+      to right,
+      #3a6073,
+      #16222a
+    );
+       /* dùng position bỏ qua hết các padding */
+       position: absolute;
+       bottom: -1px;
+       left: 0;
+       transition: all 0.3s linear;
+     }
+  }
+
+  .headerallProduct {
+		color: #16222a;
+		margin-top: 30px;
+
+		a {
+			text-decoration: none;
+			color: #16222a;
+		}
+		h3 {
+			font-size: 16px;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+		}
+	}
+
+
+  .item {
+    /* Colorize-zoom Container */
+    .img-hover-zoom {
+        margin: 0 auto;
+        width: 100%;
+        
+      img {
+        transform-origin: 65% 75%;
+        transition: transform 1s, filter .5s ease-out;
+        border-radius: 5px;
+       width: 100%;
+       &:hover::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to top, #000000, transparent);
+      }
+      &:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    }
+      }
+     
+     
+    }
+          padding: 10px auto;
+          transition: box-shadow .3s;
+          border-radius:10px;
+          transition: box-shadow .3s;
+          margin: 10px;
+          border-radius:10px;
+          background: #fff;
+          padding: 10px ;
+          
+          .name{
+              color:#3a6073;
+              font-size: 14px;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+          }
+    p {
+      margin: 0;
+              font-size: 12px;
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+              color: #4a4a4a;
+    }
+    .button {
+      border-radius: 4px;
+      background: #16222a; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #3a6073,
+        #16222a
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #3a6073,
+        #16222a
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      border: none;
+      color: #ffffff;
+      text-align: center;
+      font-size: 18px;
+      padding: 5px;
+
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+
+      span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+
+        &:after {
+          content: "\00bb";
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+      }
+
+      &:hover span {
+        padding-right: 25px;
+        &:after {
+          opacity: 1;
+          right: 0;
+        }
+      }
+    }
+          &:hover{
+          box-shadow: 0 0 11px rgba(33,33,33,.2); 
+      }
+  }
+}

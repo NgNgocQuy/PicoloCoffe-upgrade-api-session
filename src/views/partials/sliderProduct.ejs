@@ -1,0 +1,25 @@
+<div class="container sliderProduct">
+    <div class="d-flex justify-content-between align-items-center headersliderProduct" >
+        <h3>Sản phẩm tương tự</h3>
+        <a href="#">Xem tất cả </a>
+  
+    </div>
+    <hr/>
+    <div class="owl-carousel owl-theme listItem">
+
+      <%productList.forEach(function(data) { %>
+            
+         <div class="item" href="#">
+            <div class="img-hover-zoom" >
+               <img src="/../img/<%=data.image%>" alt="This zooms-in really well and smooth">
+            </div>
+            <div class="content text-center">
+               <span class="name"><%=data.name%></span>
+               <p>Giá : <%=data.price%> VND</p>
+               <button class="button"><span><a style="color: white; text-decoration: none;" href="/layout/product-detail/?key=<%=data._id%>">Tìm hiểu thêm</a> </span></button>
+            </div>
+         </div>
+      <% }); %>
+   </div>
+   
+</div>

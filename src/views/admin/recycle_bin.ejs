@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/../vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="/../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/../css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/../css/custom.css">
+
+</head>
+
+<body>
+
+    <%-include('../partials/sidebarAdmin.ejs')%>
+
+        <div class="page">
+            <%-include('../partials/headerAdmin.ejs')%>
+
+
+                <section id="tabs" class="m-5">
+                    <div class="container">
+                        <h6 class="section-title h1">Recycle Bin</h6>
+                        <div class="row">
+                            <div class="col-12 ">
+                                <nav>
+                                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
+                                            href="#nav-home" role="tab" aria-controls="nav-home"
+                                            aria-selected="true">Products</a>
+                                        <a class="nav-item nav-link " id="nav-profile-tab" data-toggle="tab"
+                                            href="#nav-profile" role="tab" aria-controls="nav-profile"
+                                            aria-selected="false">Category</a>
+                                    </div>
+                                </nav>
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10">
+                                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                        <div class="tab-pane fade show active " id="nav-home" role="tabpanel"
+                                            aria-labelledby="nav-home-tab">
+                                                <table class="table">
+                           <thead class="thead-dark">
+                                                  <tr>
+                                                      <th>STT</th>  
+                                                      <th>name</th>
+                                                      <th>vn_name</th>
+                                                      <th>description</th>
+                                                      <th>price</th>
+                                                      
+                                                      <th></th>
+                                                      <th></th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                <% var i =1; products.forEach(function(data) { %>
+                                                  <tr>
+                                                     
+                                                      <td scope="row"><%=i++ %></td>
+                                                      <td><%=data.name %></td>
+                                                      <td><%=data.vn_name%></td>
+                                                      <td><%=data.description %></td>
+                                                      <td><%=data.price %></td>
+                                                      
+                                                      <td><a   data-id="<%=data._id %>"  class="btn-restore"
+                                                         href="" title="restore"><i class="far fa-window-restore " ></i></a>
+                                                </td>
+                                                    <td><a id="data._id" data-toggle="modal" title="delete" class="btn-force-delete" 
+                                                            data-target="#exampleModalLong" data-id="<%=data._id%>" href=""><i
+                                                                style="color: red;" class="fas fa-trash-alt"></i></a>
+                                                    </td>
+                                                  </tr>
+                                                  <% }); %>  
+                                                  
+                                              </tbody>
+                                        
+                                              </table>
+                                        </div>
+                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                            aria-labelledby="nav-profile-tab">
+                                                        <div class="col-lg-12">
+                                                                     <table class="table" id="table-cat">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>ID</th>
+                                                        <th>Tên tiếng anh</th>
+                                                        <th>Tên tiếng việt</th>
+                                                        
+                                                        <th></th>
+                                                        <th></th>
+    
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <%  if (categories.length ==0){ %>
+                                                        <tr><td colspan="3">Empty</td></tr>
+                                                        <%    }else { %>
+
+                                                
+                                                    <% var i =1; categories.forEach(function(data) { %>
+                                                      <tr>
+                                                         
+                                                          <td scope="row"><%=i++ %></td>
+                                                          <td><%=data.id %></td>
+                                                          <td><%=data.name %></td>
+                                                          <td><%=data.vn_name %></td>
+                                                          <td><a   data-id="<%=data._id%>"  class="btn-restore-cat"
+                                                             href="" title="restore"><i class="far fa-window-restore " ></i></a>
+                                                    </td>
+                                                        <td><a id="data._id" data-toggle="modal" title="delete" class="btn-force-delete-cat" 
+                                                                data-target="#exampleModalLongCat" data-id="<%=data._id%>" href=""><i
+                                                                    style="color: red;" class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                      </tr>
+                                                      <% });    } %>  
+                                                      
+                                                  </tbody>
+                                            </table>
+                </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                                <div class="col-1"></div>
+
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        </div>
+
+        <!-- Modal products -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Xóa sản phẩm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn xóa sản phẩm này ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-delete" class="btn btn-primary">Delete</button>
+                        <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal category -->
+        <div class="modal fade" id="exampleModalLongCat" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Xóa loại sản phẩm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn chắc chắn  muốn xóa loại sản phẩm này ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-delete-cat" class="btn btn-primary">Delete</button>
+                        <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <style>
+    </style>
+
+<form name="form-delete" action="" method="POST"></form>
+<form name="form-restore" action="" method="POST"></form>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var productID;
+        var deleteForm = document.forms["form-delete"];
+        var restoreForm = document.forms["form-restore"]
+        var btnDelete = document.getElementById('btn-delete');
+        var btnDeleteCat = document.getElementById('btn-delete-cat');
+        var btnRestoreCat = $('.btn-restore-cat')
+        var btnRestore = $('.btn-restore')
+
+        $('#exampleModalLong').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            productID = button.data('id');
+        });
+
+        $('#exampleModalLongCat').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            categoryID = button.data('id');
+        });
+        btnDelete.onclick = function () {
+            deleteForm.action = '/admin/delete/product/' + productID + '/force?_method=DELETE';
+            deleteForm.submit();
+        }
+        btnDeleteCat.onclick = function () {
+            deleteForm.action = '/admin/delete/category/' + categoryID + '/force?_method=DELETE';
+            deleteForm.submit();
+        }
+        btnRestore.click(function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            restoreForm.action = '/admin/restore/product/' + id + '?_method=PATCH';
+            restoreForm.submit();
+        })
+        btnRestoreCat.click(function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            restoreForm.action = '/admin/restore/category/' + id + '?_method=PATCH';
+            restoreForm.submit();
+        })
+    });
+</script>
+        <!-- JavaScript files-->
+        <script src="/../vendor/jquery/jquery.min.js"></script>
+        <script src="/../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/../js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+        <script src="/../vendor/jquery.cookie/jquery.cookie.js"> </script>
+        <script src="/../vendor/chart.js/Chart.min.js"></script>
+        <script src="/../vendor/jquery-validation/jquery.validate.min.js"></script>
+        <script src="/../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- Main File-->
+        <script src="/../js/front.js"></script>
+</body>
+
+<style>
+    .modal-dialog-edit{
+        max-width: 756px;
+    }
+    
+</style>
+</html>

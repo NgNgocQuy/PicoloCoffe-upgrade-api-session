@@ -1,0 +1,104 @@
+/* START FOOTER */
+
+footer {
+    font-size: 14px;
+    font-weight: 500;
+    				background: #16222a; /* fallback for old browsers */
+				background: -webkit-linear-gradient(
+					to right,
+					#3a6073,
+					#16222a
+				); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(
+					to right,
+					#3a6073,
+					#16222a
+				); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top: 50px;
+  
+    h6 {
+      font-size: 16px;
+      margin: 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color:  	#fff;
+      border: none;
+      padding-bottom:5px;
+      
+    }
+  
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      
+      li{
+        color :#fff;
+        a {
+          font-size: 13px;
+          display: inline-block;
+          padding: 3px 0;
+          letter-spacing: 1.5px;
+          color: #fff;
+          text-decoration: none;
+          transition: 0.5s all;
+          font-weight: thin;
+          
+          i {
+            color: #717171;
+            transition: all 0.5s;
+          }
+    
+          &:hover {
+            font-size: 13px;
+            display: inline-block;
+            padding: 3px 0;
+            letter-spacing: 1.5px;
+            color:  	#fff;
+            text-decoration: none;
+    
+            i {
+              font-size: 13px;
+              display: inline-block;
+              padding: 3px 0;
+              letter-spacing: 1.5px;
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      
+    }
+
+  }
+  
+  .footer {
+    .container .row {
+      border-bottom: #717171 1px solid;
+      padding-bottom: 50px;
+      padding-top: 40px;
+    }
+  
+    .copyright {
+      a {
+        color: #fff;
+  
+        &:hover {
+          cursor: pointer;
+          -webkit-transition: all 300ms ease-in-out;
+          -moz-transition: all 300ms ease-in-out;
+          transition: all 300ms ease-in-out;
+          text-decoration: none;
+          color: #ec7532;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+  
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+  
+  /* END FOOTER */

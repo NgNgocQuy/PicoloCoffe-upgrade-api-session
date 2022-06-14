@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/../vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="/../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/../css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/../css/custom.css">
+
+</head>
+
+<body>
+
+    <%-include('../partials/sidebarAdmin.ejs')%>
+
+        <div class="page">
+            <%-include('../partials/headerAdmin.ejs')%>
+
+
+                <section id="tabs" class="m-5">
+                    <div class="container">
+                        <h6 class="section-title mb-3 h1">Product Control</h6>
+                        <div class="row">
+                            <div class="col-12 ">
+
+                                        
+                                    
+                              <div class="card">
+                                <!-- Điền thông tin sản phẩm -->
+                              <div class="card-header d-flex align-items-center bg-dark">
+                                <h4 class="text-light">Điền thông tin sản phẩm</h4>
+                              </div>
+                              <div class="card-body">
+                                <form class="form-horizontal" action="/admin/insert" method="POST" enctype="multipart/form-data">
+                                  <div class="form-group row">
+                                    <label class="col-sm-2 form-control-label">Tên tiếng việt</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" name="vn_name" id="vn_name" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                      <label class="col-sm-2 form-control-label">Tên tiếng anh</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" name="name" id="name" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label class="col-sm-2 form-control-label">Category</label>
+                                      <div class="col-sm-10 mb-3">
+                                        <select name="categoryId" id="categoryId" class="form-control">
+                                          <% categoriesArray.forEach(categoriesArray => { %>
+                                              <option value="<%- categoriesArray.id %>"><%- categoriesArray.name %></option>
+                                          <% }); %> 
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label class="col-sm-2 form-control-label">Mô tả</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" name="description" id="description" class="form-control">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label class="col-sm-2 form-control-label">Giá</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" name="price" id="price" class="form-control">
+                                      </div>
+                                    </div>
+              
+                                    <div class="form-group row">
+                                      <label class="col-sm-2 form-control-label">Hình ảnh</label>
+                                      <div class="col-sm-10">
+                                          <input type="file" accept="image/*" onchange="loadFile(event)"
+                                          class="form-control" name="image" id="image" aria-describedby="helpId" >
+                                          <div class="card">
+                                            <div class="card-body">
+                                              <h4 class="card-title">View Image</h4>
+                                              <img class="card-img-top embed-responsive-item" id="output"/>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  <div class="line"></div>
+              
+              
+                                  <div class="form-group row">
+                                    <div class="col-sm-4 offset-sm-2">
+                                      <a href="/admin/insert" class="btn-secondary"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                                      <button type="submit"
+                                          class="btn btn-primary" >Save changes</button>
+                                      
+                                    </div>
+                                  </div>
+                                </form>
+                </div>
+              </div>
+            </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        </div>
+
+        <script>
+          var loadFile = function(event) {
+              var output = document.getElementById('output');
+              output.src = URL.createObjectURL(event.target.files[0]);
+              output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+              }
+            };
+        </script>
+
+
+        <!-- JavaScript files-->
+        <script src="/../vendor/jquery/jquery.min.js"></script>
+        <script src="/../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/../js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+        <script src="/../vendor/jquery.cookie/jquery.cookie.js"> </script>
+        <script src="/../vendor/chart.js/Chart.min.js"></script>
+        <script src="/../vendor/jquery-validation/jquery.validate.min.js"></script>
+        <script src="/../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- Main File-->
+        <script src="/../js/front.js"></script>
+</body>
+
+<style>
+    .modal-dialog-edit{
+        max-width: 756px;
+    }
+</style>
+</html>

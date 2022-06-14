@@ -1,0 +1,91 @@
+// layout chưa các thành phần chung cảu trang web
+
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height:auto
+
+  }
+  
+  .section-title {
+    font-size: 18px;
+    margin-bottom: 40px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: #ec7532;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-decoration: none;
+  }
+  
+  .arrow-button {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ec7532;
+    transition: 0.6s all;
+    text-decoration: none;
+  }
+  
+  .line::after {
+    content: "";
+    width: 148px;
+    display: block;
+    height: 4px;
+    box-shadow: 0 0 20px 0 #3a6073;
+    background: linear-gradient(
+					to right,
+					#3a6073,
+					#16222a
+				);
+  
+    /* dùng position bỏ qua hết các padding */
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    transition: all 0.3s linear;
+  }
+  
+  .header {
+    .navbar-nav {
+      border-color: rgba(255, 255, 255, 0.3) !important;
+    }
+  
+    .nav-link {
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0.25rem;
+        background: linear-gradient(
+					to right,
+					#3a6073,
+					#16222a
+				);
+        box-shadow: 0 0 20px 0 #16222a;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        transition: all 0.5s;
+      }
+  
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  
+    .active::after {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 976px) {
+    .carousel-caption {
+        display:none;
+    }
+}

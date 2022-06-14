@@ -1,0 +1,69 @@
+<section class="tixNews">
+    <div class="news-wrap container">
+      <ul class="nav nav-tabs newsTab" id="newsTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#news24h" role="tab" aria-controls="home" aria-selected="true">Mô tả chi tiết</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#newsReview" role="tab" aria-controls="profile" aria-selected="false">Review</a>
+        </li>
+
+      </ul>
+      <div class="tab-content newsTabContent" id="newsTabContent">
+          <div class="tab-pane fade show active" id="news24h" role="tabpanel" aria-labelledby="home-tab">
+              
+              <table class="table table-hover table-borderless">
+
+                  <tbody>
+                    <!--  -->
+                    
+                    <!--  -->
+                      <tr>
+                          <td class="title" style = "width: 30%">Tên sản phẩm</td>
+                          <td><%=product.vn_name%></td>                     
+                      </tr>
+                      <tr>
+                          <td class="title" style = "width: 30%" >Loại</td>
+                          <td><%=product.category.name%></td>                 
+                      </tr>
+                      <tr>
+                          <td  class="title" style = "width: 30%">Giá</td>
+                          <td><%=product.price%> VND</td>                     
+                      </tr>
+                      <tr>
+                          <td class="title" style = "width: 30%" >Mô tả</td>
+                          <td><%=product.description%></td>                     
+                      </tr>
+                  </tbody>
+              </table>
+              
+          </div>
+          <div class="tab-pane fade" id="newsReview" role="tabpanel" aria-labelledby="profile-tab">
+            <% const reviewObject = []; %>
+
+              <% for (let objectKey of commentList) { %>
+                <%    reviewObject.push(objectKey);  %>
+            <%}%>
+
+
+            <% reviewObject.forEach(function(data) { %>
+              <div class="media mt-3 mb-4 ">
+                <img class="d-flex mr-3 z-depth-1 rounded-circle" src="https://mdbootstrap.com/img/Photos/Others/placeholder1.jpg" width="62" alt="Generic placeholder image">
+                  <div class="media-body">
+                      <div class="d-sm-flex justify-content-between">
+                          <p class="mt-1 mb-2">
+                              <strong><%=data.name%></strong> 
+                          </p>      
+                      </div>
+                      <p class="mb-0"><%= data.comment %> </p>
+                  </div>
+              </div>
+              <hr>
+            <% }); %>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>

@@ -1,0 +1,80 @@
+
+ 
+<div class="container productDetail">
+      <div class="d-flex justify-content-between align-items-center headerproductDetail mb-3" >
+      <h3><a href="/">Trang Chủ</a> 
+        <i class="fas fa-chevron-right"></i>
+        <a href=""><%=product.category.name%></a> 
+        <i class="fas fa-chevron-right"></i>
+        <a href=""><%=product.name%></a> 
+        
+      </h3>
+  </div>
+    <div class="row">
+        <div class="col-6 d-flex justify-content-center align-items-center img-hover-zoom" width="80%">
+            <img src="/../img/<%=product.image%>" width="70%" height="auto" 
+            >
+        </div>
+                
+        <div class="col-md-6 align-items-center detail p-5">
+      
+            <h5><%=product.name%></h5>
+            <p class="mb-2 text-muted text-uppercase small"><%=product.category.name%></p>
+      
+            <p><span class="mr-1"><strong><%=product.price%> VND</strong></span></p>
+            <h4>Description</h4>
+            <p class="pt-1"><%=product.description%></p>
+
+            <hr>
+
+            <div class="text-center"><button type="button" class="button" data-toggle="modal" data-target="#myModal"><span>Đánh giá</span></button></div>
+            
+          </div>
+    </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+<form action="/layout/product-detail/?key=<%=product._id%>" method="post">
+      <!-- Modal Header -->
+      <div class="modal-header text-center">
+        <h4 class="modal-title ">Đánh giá thức uống</h4>
+        <button type="button" class="close"  data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+       <div class="form-group">
+         <label for="">Tên</label>
+         <input type="text"
+           class="form-control" name="name" id="" aria-describedby="helpId" placeholder="Vui lòng nhập vào tên">
+       </div>
+       <div class="form-group">
+        <label for="">Email</label>
+        <input type="text"
+          class="form-control" name="email" id="" aria-describedby="helpId" placeholder="Vui lòng nhập vào email">
+      </div>
+      
+
+      <div class="form-group">
+        <label for="">Nhận xét</label>
+        <textarea type="text"
+          class="form-control" name="comment" id="" aria-describedby="helpId" placeholder="Bạn hãy nhận xét thức uống này nhé <3"></textarea>
+      </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"  data-dismiss="modal"><span>Đóng</span></button>
+        <button type="submit" name="id_product" value="<%=product._id%>" class="button" ><span>Góp ý</span></button>
+        
+
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+  <!--Section: Block Content-->

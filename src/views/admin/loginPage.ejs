@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/../vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="/../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/../css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/../css/custom.css">
+   
+  </head>
+  <body>
+    <div class="page login-page">
+      <div class="container">
+        <div class="form-outer text-center d-flex align-items-center">
+          <div class="form-inner">
+            <div class="logo text-uppercase"><span>Login </span><strong class="text-primary">Dashboard</strong></div>
+            <p><%=message%></p>
+            <form method="post" class="text-left form-validate" action="/admin/login">
+              <div class="form-group-material">
+                <input id="login-username" type="text" name="username" required data-msg="Please enter your username" class="input-material">
+                <label for="login-username" class="label-material">Username</label>
+              </div>
+              <div class="form-group-material">
+                <input id="login-password" type="password" name="password" required data-msg="Please enter your password" class="input-material">
+                <label for="login-password" class="label-material">Password</label>
+              </div>
+            
+                <button type="submit" class="btn btn-primary ">Login</button>
+                <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+              </div>
+            <!-- </form><a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup">Signup</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="/../vendor/jquery/jquery.min.js"></script>
+    <script src="/../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/../js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="/../vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="/../vendor/chart.js/Chart.min.js"></script>
+    <script src="/../vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/../vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Main File-->
+    <script src="/../js/front.js"></script>
+  </body>
+</html>

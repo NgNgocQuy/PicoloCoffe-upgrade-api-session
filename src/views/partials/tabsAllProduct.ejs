@@ -1,0 +1,83 @@
+<section class="py-3 allProduct">
+
+    <div class="container py-4">
+
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Tabs nav -->
+                <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+                    <a class="nav-link mb-2 shadow active" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="true">
+                        <span class="font-weight-bold small text-uppercase">All Products</span></a>
+                        
+                    <% var count=0 %> 
+                    <%countArrCate.forEach(function(data) { %>
+                        <a class="nav-link mb-2 shadow" id="v-<%=data %>-tab" data-toggle="pill" href="#v-<%=data %>" role="tab" aria-controls="v-<%=data %>" aria-selected="false">
+                            <span class="font-weight-bold small text-uppercase"><%= nameArrCate[count]%></span>
+                        </a>
+                        <% count++ %>
+                        
+                    <% }) %> 
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <!-- Tabs content -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <!--  -->
+                    <div class="tab-pane fade shadow rounded bg-white show active p-4" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+                        <h4 class="font-italic mb-4">All products</h4>
+                        <div class="row">
+
+                            <%products.forEach(function(data) { %>
+
+                            <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="item" href="#">
+                                    <div class="img-hover-zoom " >  
+                                          <img src="../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
+                                    </div>
+                                    <div class="content text-center">
+                                    <span class="name"><%=data.name%></span>
+                                    <p>Giá :<%=data.price%> VND</p>
+                                    <button class="button"><a href="/layout/product-detail/?key=<%=data._id%>" style="color: white; text-decoration: none ;">Tìm hiểu thêm </a></button>
+                                </div>
+                                </div>
+                            </div>
+                            <% }); %>       
+
+                        </div>
+                    </div>
+                    <% var count = 0; countArrCate.forEach(elementArrCate => { %>
+                         
+                        <div class="tab-pane fade shadow rounded bg-white p-4" id="v-<%=elementArrCate%>" role="tabpanel" aria-labelledby="v-<%=elementArrCate%>-tab">
+                            <h4 class="font-italic mb-4"><%= nameArrCate[count]%></h4>
+                            <div class="row">
+
+                                <%products.forEach(function(data) { %>
+                                    <% if(data.category.id == elementArrCate){ %>
+                                        <!--  -->
+                                        <div class="col-lg-4 col-sm-6 col-xs-12">
+                                            <div class="item" href="#">
+                                                <div class="img-hover-zoom " >  
+                                                    <img src="../img/<%=data.image%>" class="w-80" alt="This zooms-in really well and smooth">
+                                                </div>
+                                                <div class="content text-center">
+                                                <span class="name"><%=data.name%></span>
+                                                <p>Giá :/<%=data.price%> VND</p>
+                                                <button class="button"><a href="/layout/product-detail/?key=<%=data._id%>" style="color: white; text-decoration: none ;">Tìm hiểu thêm </a></button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    <% } %>
+                                <% }); %>       
+                            </div>
+                        </div>
+                        <% count++ %> 
+                    <% }); %>
+                    <!--  -->
+                </div>
+                <!-- end tab content -->
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+.tixNews {
+    .newsTab {
+        justify-content: center;
+        align-items: center;
+        border-bottom: none;
+        padding-bottom: 30px;
+        .nav-link {
+            color: #000;
+            font-size: 20px;
+            border-radius: 0;
+            border: none;
+            padding: 7px 10px;
+            font-weight: 500;
+            line-height: 24px;
+            transition: all 0.3s;
+            &:hover {
+                border-radius: 0;
+                border: none;
+                font-size: 24px;
+                color: #3A6073;
+            }
+            &.active {
+                border: none;
+                font-size: 24px;
+                color: #3A6073;
+            }
+        }
+    }
+    .title{
+        font-size: 16px;
+			letter-spacing: 1.2px;
+			text-transform: uppercase;
+    }
+}
+
