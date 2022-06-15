@@ -1,28 +1,22 @@
 "NgNgocQuy"
-upgrade:
-    - api:
-
-    - promise: async await
+upgrade Admin for Picolo coffee:
+    -async await
 -----------------------------------------
 debug log: task: >> [function] >> [query] >> [data] >> [src]
-I. admin.
 
-1,user fucntion :
+// - session
+1,account controller:
+    Middleware
+    -check premission
+    -session control: check, update
 
-    -login: find user-> update sessionKey = new time -> set session= newKey.
+// - control
+1,admin controller :
+    -login
+    -logout
+    -render page
+    -call Function
 
-    -logout: delete session
-
-    -session: query session = sessionKey in db
-
-    -premission level: 1-admin, >10-user, >100-viewer, >1000-customer
-
-        -query level with sessionKey
-
-2,product fucntion
-
-    *first: using middleware to check session key and premission level
-
-        - req.body.sessionKey
-
-    -product view: 
+// - fuction : interact directly with the database
+1,product function
+    - CRUD product
