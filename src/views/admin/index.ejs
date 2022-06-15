@@ -82,7 +82,7 @@
               <td><%=data.price %></td>
               
               <td>
-                <a title="edit" href="/admin/product/productDetail?id=<%= data.id %>"> 
+                <a title="edit" href="/product/productDetail?id=<%= data.id %>"> 
                   <i class="fas fa-edit"></i>
                 </a>
           </td>
@@ -144,7 +144,7 @@
   })
  
   btnDelete.onclick = function(){
-  deleteForm.action='/admin/delete/product/'+productID+'?_method=DELETE';
+  deleteForm.action='/delete/product/'+productID+'?_method=DELETE';
   deleteForm.submit()
   }
   })

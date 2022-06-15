@@ -26,11 +26,13 @@ const productInsert = async (data,count)=>{
     }
 
 }
-const productUpdate = async (req,res,next)=>{
-
+const productUpdate = async (filter,updateData)=>{
+    let doc = await Production.findOneAndUpdate(filter,updateData).exec()
+    return doc
 }
-const productDelete = async (req,res,next)=>{
+const productDelete = async (filter,deleteData)=>{
 
+    return "something"
 }
 
 class adminFunctionController {

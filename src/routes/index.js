@@ -5,9 +5,9 @@ const layoutRouter = require('./layout')
 
 const route = (app)=>{
 
-   app.use('/admin/',adminRouter)
-   app.use('/layout/', layoutRouter)
-   app.use('/',siteRouter);
+   app.use('/',adminRouter)
+   // app.use('/layout/', layoutRouter)
+   // app.use('/',siteRouter);
     
 
 }

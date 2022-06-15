@@ -13,7 +13,8 @@ const productSchema = new mongoose.Schema({
     },
 
     rate: String,
-    id: String
+    id: String,
+    deleted: String,
 })
 
 //Add plugin

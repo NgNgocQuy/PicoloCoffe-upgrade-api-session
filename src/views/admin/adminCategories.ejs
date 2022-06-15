@@ -108,7 +108,7 @@
                         <h4>Điền thông tin </h4>
                     </div>
                     <div class="card-body">
-                      <form class="form-horizontal" action="/admin/categoryInsert" method="POST">
+                      <form class="form-horizontal" action="/categoryInsert" method="POST">
                         <div class="form-group row">
                           <label class="col-3 form-control-" name>Tên tiếng việt</label>
                           <div class="col-9">
@@ -193,7 +193,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal col-md-8" action="/admin/categoryUpdate/?_method=PUT" method="POST" >
+                    <form class="form-horizontal col-md-8" action="/categoryUpdate/?_method=PUT" method="POST" >
                         <div class="form-group row">
                             <label class="col-3 form-control-label">Category ID</label>
                             <div class="col-9">
@@ -236,7 +236,7 @@
             categoryID = button.data('id')
         })
         btnDelete.onclick = function(){
-            deleteForm.action='/admin/delete/category/'+categoryID+'?_method=DELETE';
+            deleteForm.action='/delete/category/'+categoryID+'?_method=DELETE';
             deleteForm.submit()
         }
         })

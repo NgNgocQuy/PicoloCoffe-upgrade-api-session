@@ -48,7 +48,7 @@
                           <img class="card-img-top embed-responsive-item" src="/../img/<%= result.productDetail.image %>" alt="<%= result.productDetail.vn_name %>">
                         </div>
 
-                        <form class="form-horizontal col-md-8" action="/admin/productUpdate/?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal col-md-8" action="/productUpdate/?_method=PUT" method="POST" enctype="multipart/form-data">
                           <input type="hidden" name="_id" id="_id" value="<%= result.productDetail._id %>">
                           <div class="form-group row">
                             <label class="col-sm-2 form-control-label">Tên tiếng việt</label>
@@ -113,7 +113,7 @@
 
                           <div class="form-group row">
                             <div class="col-sm-4 offset-sm-2">
-                              <a href="/admin" class="btn-secondary"><button type="button" class="btn btn-secondary">Cancel</button></a>
+                              <a href="" class="btn-secondary"><button type="button" class="btn btn-secondary">Cancel</button></a>
                               <button type="submit"
                                   class="btn btn-primary" >Save changes</button>
                               

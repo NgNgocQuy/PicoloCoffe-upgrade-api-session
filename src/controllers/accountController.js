@@ -17,9 +17,14 @@ const authenticate = async(req, res, next)=>{
             req.permission = snapshot.permission
             next()
         }
-        else res.redirect('/admin/loginPage')
+        else {
+            req.session.destroy(function (err) {
+                if (err) return next(err)
+                else return res.redirect('/loginPage');
+            });
+        }
     } catch (error) {
-        res.redirect('/admin/loginPage')
+        res.redirect('/loginPage')
     }
         
 }

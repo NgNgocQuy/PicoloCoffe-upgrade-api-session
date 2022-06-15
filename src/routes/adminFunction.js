@@ -9,11 +9,10 @@ adminFunction.get("/test/test2", (req,res,next)=>{console.log("admin test2"); ne
 
 // admin function api
     // product
-    adminFunction.get("/product/productDetail", (req,res,next)=>{next()},adminController.productDetail)
+    adminFunction.get("/product/productDetail", adminController.productDetail)
     adminFunction.get("product/search", adminController.productSearch)
-    adminFunction.post("product/insert", adminController.productInsert)
-    adminFunction.put("product/update", adminController.productUpdate)
-    adminFunction.delete('product/remove',adminController.productRemove)
+    adminFunction.post("product/insert", adminController.productInsert)//
+    adminFunction.put("product/update", adminController.productUpdate)//
     adminFunction.delete('product/delete',adminController.productDelete)
     adminFunction.patch('product/restore',adminController.productRestore)
 
@@ -32,17 +31,17 @@ adminFunction.get('/', adminController.index)
 
 
 // adminFunction.get('/insert', adminController.waitInsert)
-adminFunction.post('/insert', store.single('image'),adminController.insertProduct)
+// adminFunction.post('/insert', store.single('image'),adminController.insertProduct)
 // adminFunction.post('/insertCategories', adminController.insertCategory)
 // product property upadte.. 
 // adminFunction.get('/products/?:productDetail',adminController.productDetail)
 
     // query
-    adminFunction.get('/productDetail?:key',adminController.productDetail)
-    adminFunction.put('/productUpdate',store.single('image'),adminController.productUpdate)
-    adminFunction.get('/search', adminController.search)
-    adminFunction.post("/categoryInsert",adminController.insertCategory)
-    adminFunction.put("/categoryUpdate",adminController.updateCategory)
-    adminFunction.get('/:slug', adminController.error)
+    // adminFunction.get('/productDetail?:key',adminController.productDetail)
+    // adminFunction.put('/productUpdate',store.single('image'),adminController.productUpdate)
+    // adminFunction.get('/search', adminController.search)
+    // adminFunction.post("/categoryInsert",adminController.insertCategory)
+    // adminFunction.put("/categoryUpdate",adminController.updateCategory)
+    // adminFunction.get('/:slug', adminController.error)
 
 module.exports = adminFunction;
